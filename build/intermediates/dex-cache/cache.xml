@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_3555f35a7761096505d9a63cf4adf0e16a4510e0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_21f5b519c2164e869c5073f669873a10a6ffd733/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_26dc2f605428e3cc0cae8c424b3002c6a806f187/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_1ada4cabcbc64c04481865b5c60eb12ca4c244a3/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_7c39bc960987d1dd1947b90065ed06445d9f5287/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_b6da7c180063c228914c7bc3c13ac1ec4164da69/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_69f4f2a0fd98682a57b659fca4b014dcb44e594a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_235b9beb33470d6ec4c654c45e50e6f8a489cb7d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_99ef5412a13745cb265a0e4802ba32fef77d95d6/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6d24c6850dfc9b84072192f04447b63790d85a5e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_3663bcc2855536db7322c0338b3d496fdf46e61f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_fa6cf5af31429e59464122fe0921df5cea0005c6/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_d24f23b368457784fbfa25327a350beb5ea4dac8/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_dabb1c025d1f8b37264315548d6fc0314ab2925f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6b241d821415dabfc9b479c43f2f125ef6df73dd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="0859900c1b0ab1b9432da13f06a788c640f85b27">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_94f7ab0b3e26c56af02075b9a6356317d81aec94/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_352e023d9df96d2f97305fd680345bbc8c9ce33d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_89a06670fc8794d60a2ac555a867d735c1e3927f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a99825b3fdda2a2e78a1cf957948137497baae26/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_3638d30fe8865fce6608af2cc5d7ed8d5ebaaef2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f1573e213c25fc67b6f2196fd245d53f5350ae72/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_55b34ab6d5998ffe81eec0c017d81c596dd297c7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_37c05831b3bf52a3d75b0a9e3f3b10a7be2380cb/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_13c1a88ca44d9e808a6961d1fdedec88ba23770e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="aea21a0ca34c2e01d4612d345aa2eb559177ffd1">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c89b96a71ec44eb02bde00f65894539fb0223d04/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="8910fe4829a8048dc0591e4eb6566d40d2eecb82">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_00010ffebc5aca6000604e7834954fcf42e03178/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_f9d325391b854b9df5790a8a2604cde9a8b8662e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5665f87ead081398aa9a22de2161972c2f068c93/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_847fe07543c540dbe2388b85c683a98d9877c931/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_183d6a07947c4a4e8299f8b4682ec4fa8e1f4b6e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="30092b07ca68703991990aecdcab436223d60351">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bf4a665a1d536b58dcf15da0e69f65ebd559e945/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/aynishim/AndroidStudioProjects/Hairselfy/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_36fb97fd9ff5378e3d4df1a0add8c8dda06f9d3a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/aynishim/Desktop/ahasebe/hairselfy_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_9b71e12469aa42fb63ff5d32eeedadefe59692e5/classes.dex" />
+    </item>
+
+</items>
