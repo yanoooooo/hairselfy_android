@@ -21,7 +21,6 @@ import java.io.OutputStream;
 import java.util.UUID;
 import java.util.Set;
 
-
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -130,6 +129,7 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
 
         //access hairselfy
         WebView myWebView = (WebView) findViewById(R.id.webView);
+        myWebView.clearCache(true);
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -146,6 +146,9 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
                 handler.proceed();
             }
         });
+
+        JsObject jsObj = new JsObject();
+        myWebView.addJavascriptInterface(jsObj, "android");
         myWebView.loadUrl("https://192.168.108.239:3000/video");
 
         //bluetooth
@@ -171,6 +174,14 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.connect_button).setOnTouchListener(mDelayHideTouchListener);
+    }
+
+    public class JsObject {
+        @JavascriptInterface
+        public void rotServo(String rot) {
+            //Log.i(TAG, "calling js: ");
+            Log.i(TAG, "calling js: " + rot.toString());
+        }
     }
 
     @Override
