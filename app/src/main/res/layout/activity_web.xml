@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#e6b2e8eb"
     tools:context="project.hasebe.yano.hairselfy.WebActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -24,7 +24,7 @@
 
     <WebView
         android:layout_width="match_parent"
-        android:layout_height="562dp"
+        android:layout_height="566dp"
         android:id="@+id/webView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -34,26 +34,34 @@
 
     <Button
         android:id="@+id/connect_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
         android:layout_weight="1"
         android:text="@string/connect_button"
         android:layout_gravity="bottom"
-        android:background="#e6b2e8eb" />
+        android:background="#ff6767"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp" />
 
     <Button
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:text="@string/write_button"
-        android:id="@+id/write_button"
-        android:layout_gravity="right|bottom"
-        android:background="#e6b2e8eb"
-        style="?metaButtonBarButtonStyle" />
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="@string/reload_button"
+        android:id="@+id/reload_button"
+        android:layout_gravity="bottom|right"
+        android:background="#ff6767"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="562dp"
+        android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
         <LinearLayout
@@ -67,13 +75,13 @@
             tools:ignore="UselessParent">
 
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|bottom">
+
+        </RelativeLayout>
     </FrameLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="565dp"
-        android:layout_gravity="right|top">
-
-    </RelativeLayout>
 
 </FrameLayout>

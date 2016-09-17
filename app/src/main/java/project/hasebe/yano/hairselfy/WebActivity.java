@@ -14,6 +14,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.widget.Button;
+import android.content.Intent;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +37,6 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
     private Thread mThread; //Thread
     private boolean isRunning; //thread status
     private Button connectButton;
-    private Button writeButton;
     private boolean connectFlg = false;
     OutputStream mmOutputStream = null; //bluetooth's output stream
 
@@ -120,15 +120,8 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
-        //button
-        connectButton = (Button)findViewById(R.id.connect_button);
-        writeButton = (Button)findViewById(R.id.write_button);
-
-        connectButton.setOnClickListener(this);
-        writeButton.setOnClickListener(this);
-
         //access hairselfy
-        WebView myWebView = (WebView) findViewById(R.id.webView);
+        final WebView myWebView = (WebView) findViewById(R.id.webView);
         myWebView.clearCache(true);
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.setWebChromeClient(new WebChromeClient() {
@@ -149,7 +142,24 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
 
         JsObject jsObj = new JsObject();
         myWebView.addJavascriptInterface(jsObj, "android");
-        myWebView.loadUrl("https://192.168.108.239:3000/video");
+
+        //create url
+        Intent intent = getIntent();
+        String ip = intent.getStringExtra("ip");
+        myWebView.loadUrl("https://"+ip+":3000/video");
+
+        //button
+        connectButton = (Button)findViewById(R.id.connect_button);
+        connectButton.setOnClickListener(this);
+        Button reloadButton = (Button)findViewById(R.id.reload_button);
+
+        reloadButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //reload
+                myWebView.reload();
+                //Log.i(TAG, "reload");
+            }
+        });
 
         //bluetooth
         mAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -273,7 +283,7 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
                 isRunning = true;
                 mThread.start();
             }
-        } else if(v.equals(writeButton)) {
+        } /*else if(v.equals(writeButton)) {
             // 接続中のみ書込みを行う
             if (connectFlg) {
                 try {
@@ -281,15 +291,11 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
                     Log.i(TAG,"writing bluetooth");
                 } catch (IOException e) {
                     Log.i(TAG,"text sending error!");
-                    /*Message valueMsg = new Message();
-                    valueMsg.what = VIEW_STATUS;
-                    valueMsg.obj = "Error3:" + e;
-                    mHandler.sendMessage(valueMsg);*/
                 }
             } else {
                 Log.i(TAG,"Please connect bluetooth");
             }
-        }
+        }*/
     }
 
     @Override

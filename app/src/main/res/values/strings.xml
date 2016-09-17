@@ -2,6 +2,6 @@
     <string name="app_name">Hairselfy</string>
 
     <string name="connect_button">Connect</string>
-    <string name="write_button">Write</string>
+    <string name="reload_button">Reload</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
