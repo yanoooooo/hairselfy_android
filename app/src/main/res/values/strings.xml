@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Hairselfy</string>
 
-    <string name="dummy_button">Settings</string>
+    <string name="connect_button">Connect</string>
+    <string name="write_button">Write</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -10,13 +10,37 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.*;
 import android.net.http.*;
-import android.webkit.PermissionRequest;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
+import android.widget.Button;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.UUID;
+import java.util.Set;
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class WebActivity extends AppCompatActivity {
+public class WebActivity extends AppCompatActivity implements Runnable, View.OnClickListener {
+    private static final String TAG = "WebActivity";
+
+    private BluetoothAdapter mAdapter; //Bluetooth Adapter
+    private BluetoothDevice mDevice; //Bluetoothデバイス
+    private final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //Bluetooth UUID
+    private final String DEVICE_NAME = "eriBT"; //device name
+    private BluetoothSocket mSocket; //Socket
+    private Thread mThread; //Thread
+    private boolean isRunning; //thread status
+    private Button connectButton;
+    private Button writeButton;
+    private boolean connectFlg = false;
+    OutputStream mmOutputStream = null; //bluetooth's output stream
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -97,6 +121,13 @@ public class WebActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
+        //button
+        connectButton = (Button)findViewById(R.id.connect_button);
+        writeButton = (Button)findViewById(R.id.write_button);
+
+        connectButton.setOnClickListener(this);
+        writeButton.setOnClickListener(this);
+
         //access hairselfy
         WebView myWebView = (WebView) findViewById(R.id.webView);
         myWebView.getSettings().setJavaScriptEnabled(true);
@@ -116,8 +147,17 @@ public class WebActivity extends AppCompatActivity {
             }
         });
         myWebView.loadUrl("https://192.168.108.239:3000/video");
-        //myWebView.loadUrl("https://google.com");
 
+        //bluetooth
+        mAdapter = BluetoothAdapter.getDefaultAdapter();
+        Set< BluetoothDevice > devices = mAdapter.getBondedDevices();
+        for (BluetoothDevice device : devices) {
+            Log.i(TAG, "searching bluetooth");
+            if (device.getName().equals(DEVICE_NAME)) {
+                Log.i(TAG, "★finding bluetooth★");
+                mDevice = device;
+            }
+        }
 
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +170,115 @@ public class WebActivity extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.settings).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.connect_button).setOnTouchListener(mDelayHideTouchListener);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        isRunning = false;
+        try{
+            mSocket.close();
+        }
+        catch(Exception e){}
+    }
+
+    @Override
+    public void run() {
+        InputStream mmInStream = null;
+
+        /*Message valueMsg = new Message();
+        valueMsg.what = VIEW_STATUS;
+        valueMsg.obj = "connecting...";
+        mHandler.sendMessage(valueMsg);*/
+        Log.i(TAG,"connecting...");
+
+        try{
+            // 取得したデバイス名を使ってBluetoothでSocket接続
+            mSocket = mDevice.createRfcommSocketToServiceRecord(MY_UUID);
+            mSocket.connect();
+            mmInStream = mSocket.getInputStream();
+            mmOutputStream = mSocket.getOutputStream();
+
+            // InputStreamのバッファを格納
+            byte[] buffer = new byte[1024];
+
+            // 取得したバッファのサイズを格納
+            int bytes;
+            Log.i(TAG,"connected");
+            /*valueMsg = new Message();
+            valueMsg.what = VIEW_STATUS;
+            valueMsg.obj = "connected.";
+            mHandler.sendMessage(valueMsg);*/
+
+            connectFlg = true;
+
+            while(isRunning){
+                // InputStreamの読み込み
+                bytes = mmInStream.read(buffer);
+                Log.i(TAG,"bytes="+bytes);
+                // String型に変換
+                String readMsg = new String(buffer, 0, bytes);
+
+                // null以外なら表示
+                if(readMsg.trim() != null && !readMsg.trim().equals("")){
+                    Log.i(TAG,"value="+readMsg.trim());
+
+                    /*valueMsg = new Message();
+                    valueMsg.what = VIEW_INPUT;
+                    valueMsg.obj = readMsg;
+                    mHandler.sendMessage(valueMsg);*/
+                }
+                else{
+                    Log.i(TAG,"value=nodata");
+                }
+
+            }
+        }catch(Exception e){
+
+            /*valueMsg = new Message();
+            valueMsg.what = VIEW_STATUS;
+            valueMsg.obj = "Error1:" + e;
+            mHandler.sendMessage(valueMsg);*/
+            Log.i(TAG,"Error:" + e);
+
+            try{
+                mSocket.close();
+            }catch(Exception ee){}
+            isRunning = false;
+            connectFlg = false;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.equals(connectButton)) {
+            // 接続されていない場合のみ
+            if (!connectFlg) {
+                Log.i(TAG,"try connecting bluetooth");
+
+                mThread = new Thread(this);
+                // Threadを起動し、Bluetooth接続
+                isRunning = true;
+                mThread.start();
+            }
+        } else if(v.equals(writeButton)) {
+            // 接続中のみ書込みを行う
+            if (connectFlg) {
+                try {
+                    mmOutputStream.write("2".getBytes());
+                    Log.i(TAG,"writing bluetooth");
+                } catch (IOException e) {
+                    Log.i(TAG,"text sending error!");
+                    /*Message valueMsg = new Message();
+                    valueMsg.what = VIEW_STATUS;
+                    valueMsg.obj = "Error3:" + e;
+                    mHandler.sendMessage(valueMsg);*/
+                }
+            } else {
+                Log.i(TAG,"Please connect bluetooth");
+            }
+        }
     }
 
     @Override
