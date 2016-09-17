@@ -146,7 +146,8 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
         //create url
         Intent intent = getIntent();
         String ip = intent.getStringExtra("ip");
-        myWebView.loadUrl("https://"+ip+":3000/video");
+        String id = intent.getStringExtra("id");
+        myWebView.loadUrl("https://"+ip+":3000/guideline?id=" + id);
 
         //button
         connectButton = (Button)findViewById(R.id.connect_button);
