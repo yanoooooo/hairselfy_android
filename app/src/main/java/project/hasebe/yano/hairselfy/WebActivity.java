@@ -8,37 +8,20 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.webkit.*;
 import android.net.http.*;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import android.widget.Button;
 import android.content.Intent;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.UUID;
-import java.util.Set;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class WebActivity extends AppCompatActivity implements Runnable, View.OnClickListener {
+public class WebActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "WebActivity";
 
-    private BluetoothAdapter mAdapter; //Bluetooth Adapter
-    private BluetoothDevice mDevice; //Bluetoothデバイス
-    private final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //Bluetooth UUID
-    private final String DEVICE_NAME = "eriBT"; //device name
-    private BluetoothSocket mSocket; //Socket
-    private Thread mThread; //Thread
-    private boolean isRunning; //thread status
+    Globals globals;
     private Button connectButton;
-    private boolean connectFlg = false;
-    OutputStream mmOutputStream = null; //bluetooth's output stream
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -119,6 +102,7 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
+        globals = (Globals)this.getApplication();
 
         //access hairselfy
         final WebView myWebView = (WebView) findViewById(R.id.webView);
@@ -140,7 +124,8 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
             }
         });
 
-        JsObject jsObj = new JsObject();
+        globals.bleUtil.connect();
+        JsObject jsObj = new JsObject(globals);
         myWebView.addJavascriptInterface(jsObj, "android");
 
         //create url
@@ -162,17 +147,6 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
             }
         });
 
-        //bluetooth
-        mAdapter = BluetoothAdapter.getDefaultAdapter();
-        Set< BluetoothDevice > devices = mAdapter.getBondedDevices();
-        for (BluetoothDevice device : devices) {
-            Log.i(TAG, "searching bluetooth");
-            if (device.getName().equals(DEVICE_NAME)) {
-                Log.i(TAG, "★finding bluetooth★");
-                mDevice = device;
-            }
-        }
-
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,116 +161,18 @@ public class WebActivity extends AppCompatActivity implements Runnable, View.OnC
         findViewById(R.id.connect_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
-    public class JsObject {
-        @JavascriptInterface
-        public void rotServo(String rot) {
-            //Log.i(TAG, "calling js: ");
-            Log.i(TAG, "calling js: " + rot.toString());
-        }
-    }
-
     @Override
     protected void onPause(){
         super.onPause();
-        isRunning = false;
-        try{
-            mSocket.close();
-        }
-        catch(Exception e){}
-    }
-
-    @Override
-    public void run() {
-        InputStream mmInStream = null;
-
-        /*Message valueMsg = new Message();
-        valueMsg.what = VIEW_STATUS;
-        valueMsg.obj = "connecting...";
-        mHandler.sendMessage(valueMsg);*/
-        Log.i(TAG,"connecting...");
-
-        try{
-            // 取得したデバイス名を使ってBluetoothでSocket接続
-            mSocket = mDevice.createRfcommSocketToServiceRecord(MY_UUID);
-            mSocket.connect();
-            mmInStream = mSocket.getInputStream();
-            mmOutputStream = mSocket.getOutputStream();
-
-            // InputStreamのバッファを格納
-            byte[] buffer = new byte[1024];
-
-            // 取得したバッファのサイズを格納
-            int bytes;
-            Log.i(TAG,"connected");
-            /*valueMsg = new Message();
-            valueMsg.what = VIEW_STATUS;
-            valueMsg.obj = "connected.";
-            mHandler.sendMessage(valueMsg);*/
-
-            connectFlg = true;
-
-            while(isRunning){
-                // InputStreamの読み込み
-                bytes = mmInStream.read(buffer);
-                Log.i(TAG,"bytes="+bytes);
-                // String型に変換
-                String readMsg = new String(buffer, 0, bytes);
-
-                // null以外なら表示
-                if(readMsg.trim() != null && !readMsg.trim().equals("")){
-                    Log.i(TAG,"value="+readMsg.trim());
-
-                    /*valueMsg = new Message();
-                    valueMsg.what = VIEW_INPUT;
-                    valueMsg.obj = readMsg;
-                    mHandler.sendMessage(valueMsg);*/
-                }
-                else{
-                    Log.i(TAG,"value=nodata");
-                }
-
-            }
-        }catch(Exception e){
-
-            /*valueMsg = new Message();
-            valueMsg.what = VIEW_STATUS;
-            valueMsg.obj = "Error1:" + e;
-            mHandler.sendMessage(valueMsg);*/
-            Log.i(TAG,"Error:" + e);
-
-            try{
-                mSocket.close();
-            }catch(Exception ee){}
-            isRunning = false;
-            connectFlg = false;
-        }
+        globals.bleUtil.pause();
     }
 
     @Override
     public void onClick(View v) {
         if(v.equals(connectButton)) {
             // 接続されていない場合のみ
-            if (!connectFlg) {
-                Log.i(TAG,"try connecting bluetooth");
-
-                mThread = new Thread(this);
-                // Threadを起動し、Bluetooth接続
-                isRunning = true;
-                mThread.start();
-            }
-        } /*else if(v.equals(writeButton)) {
-            // 接続中のみ書込みを行う
-            if (connectFlg) {
-                try {
-                    mmOutputStream.write("2".getBytes());
-                    Log.i(TAG,"writing bluetooth");
-                } catch (IOException e) {
-                    Log.i(TAG,"text sending error!");
-                }
-            } else {
-                Log.i(TAG,"Please connect bluetooth");
-            }
-        }*/
+            globals.bleUtil.connect();
+        }
     }
 
     @Override

@@ -9,11 +9,16 @@ import android.view.View.OnClickListener;
 import android.content.Intent;
 
 public class inputUrlActivity extends AppCompatActivity {
+    Globals globals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_url);
+
+        globals = (Globals)this.getApplication();
+        globals.init();
+        globals.bleUtil.serchDevice();
 
         //text
         final EditText ip_edit = (EditText)findViewById(R.id.ip_edit);
@@ -21,6 +26,7 @@ public class inputUrlActivity extends AppCompatActivity {
 
         //start button
         Button startButton = (Button)findViewById(R.id.start_button);
+        Button bleButton = (Button)findViewById(R.id.ble_button);
         startButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Sub 画面を起動
@@ -31,5 +37,17 @@ public class inputUrlActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bleButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                globals.bleUtil.connect();
+            }
+        });
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        globals.bleUtil.pause();
     }
 }
